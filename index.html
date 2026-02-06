@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>My Valentine 💖</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: "Comic Sans MS", "Segoe UI", sans-serif;
+      background: linear-gradient(135deg, #ffb6c1, #ffe4f2);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    .page {
+      display: none;
+      background: #fff;
+      padding: 30px;
+      border-radius: 18px;
+      width: 90%;
+      max-width: 780px;
+      text-align: center;
+      box-shadow: 0 12px 35px rgba(0,0,0,0.2);
+      animation: pop 0.6s ease;
+    }
+
+    .page.active {
+      display: block;
+    }
+
+    @keyframes pop {
+      from { transform: scale(0.9); opacity: 0; }
+      to { transform: scale(1); opacity: 1; }
+    }
+
+    p {
+      font-size: 16px;
+      line-height: 1.7;
+      white-space: pre-line;
+    }
+
+    .cat-row {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      margin: 15px 0;
+      flex-wrap: wrap;
+    }
+
+    .cat-row img {
+      width: 120px;
+      border-radius: 14px;
+      box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+    }
+
+    .buttons {
+      margin-top: 30px;
+      position: relative;
+      height: 140px;
+    }
+
+    button {
+      padding: 14px 32px;
+      font-size: 16px;
+      border: none;
+      border-radius: 30px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    #yesBtn {
+      background: #ff4d6d;
+      color: white;
+      box-shadow: 0 6px 15px rgba(255,77,109,0.4);
+    }
+
+    #yesBtn:hover {
+      transform: scale(1.1);
+    }
+
+    #noBtn {
+      background: #d3d3d3;
+      color: #333;
+      position: absolute;
+    }
+
+    #plead {
+      margin-top: 15px;
+      color: #ff4d6d;
+      font-weight: bold;
+      display: none;
+      font-size: 18px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Page 1 -->
+  <div class="page active" id="page1">
+
+    <div class="cat-row">
+      <img src="https://media.giphy.com/media/JIX9t2j0ZTN9S/giphy.gif" alt="cute cat">
+      <img src="https://media.giphy.com/media/mlvseq9yvZhba/giphy.gif" alt="cute cat">
+      <img src="https://media.giphy.com/media/3oriO0OEd9QIDdllqo/giphy.gif" alt="cute cat">
+    </div>
+
+    <p>
+hellooo sweethearttt 💕  
+
+we have known each other for almost **two and a half years**, and we’ve made sooo many beautiful memories together 🥺💫  
+do you remember our first February together? when you told me what Valentine’s Day was 💌 and I was confused about whether I should ask you or not.  
+I kept thinking, *“it’s long distance… it’s impossible”* 😔  
+
+but just a few days after Valentine’s week… **you proposed to me** 🥹💖  
+I really regretted not asking you to be my Valentine that year.  
+
+I know you’ve been waiting for this 🥺💞  
+and maybe you thought I wouldn’t ask you…  
+
+but here I am 🫶  
+
+sooooo my darlinggg 💘  
+**would you like to be my Valentine?** 🌹💝
+    </p>
+
+    <div class="buttons">
+      <button id="yesBtn">YES 💖</button>
+      <button id="noBtn">NO 🙄</button>
+    </div>
+
+    <div id="plead">pleaseeeeeee 🥺👉👈</div>
+  </div>
+
+  <!-- Page 2 -->
+  <div class="page" id="page2">
+
+    <div class="cat-row">
+      <img src="https://media.giphy.com/media/l4KibK3JwaVo0CjDO/giphy.gif" alt="love cat">
+      <img src="https://media.giphy.com/media/MDJ9IbxxvDUQM/giphy.gif" alt="love cat">
+      <img src="https://media.giphy.com/media/26BRv0ThflsHCqDrG/giphy.gif" alt="love cat">
+    </div>
+
+    <p>
+anddddddddd about the Valentine’s gifts 🎁🥺  
+
+I’m really sorry I can’t gift you anything right now 😔  
+I know I’m such a bad boyfriend 😭💔  
+but I’m waiting for the time when your papa orders things for you,  
+so I can order something special for you too 💝  
+
+I’m sorry about the no gifttssss 🥺  
+and let me know if you need *anything* from me —  
+I’ll do it for you, always 💞  
+
+babygurllll 🥰  
+I love you sooo sooo much 💖💖  
+thank you for being my Valentine 🌹  
+it’s truly my honour to be the man of such a beautiful girlfriend 🫶✨  
+
+I love you endlessly ❤️
+    </p>
+  </div>
+
+  <script>
+    const noBtn = document.getElementById("noBtn");
+    const plead = document.getElementById("plead");
+    const yesBtn = document.getElementById("yesBtn");
+    const page1 = document.getElementById("page1");
+    const page2 = document.getElementById("page2");
+
+    noBtn.style.left = "45%";
+    noBtn.style.top = "50px";
+
+    noBtn.addEventListener("mouseenter", () => {
+      const x = Math.random() * 320;
+      const y = Math.random() * 100;
+      noBtn.style.left = x + "px";
+      noBtn.style.top = y + "px";
+      plead.style.display = "block";
+    });
+
+    yesBtn.addEventListener("click", () => {
+      page1.classList.remove("active");
+      page2.classList.add("active");
+    });
+  </script>
+
+</body>
+</html>
